@@ -1,3 +1,4 @@
+// components/HeartIcon.tsx
 interface HeartIconProps {
   isFavorite: boolean;
   onClick: (e: React.MouseEvent) => void; // Tıklama olayını alacak
