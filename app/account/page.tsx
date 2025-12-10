@@ -118,7 +118,7 @@ export default function AccountPage() {
                         <input type="text" name="surname" value={formData.surname} onChange={handleInputChange} className={inputClass} />
                     </div>
                 </div>
-
+                                                                                    
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                     <div>
                         <label className={labelClass}>E-Posta</label>
