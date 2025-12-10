@@ -1,4 +1,3 @@
-// app/page.tsx
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -45,7 +44,7 @@ export default function HomePage() {
     setCurrentPageProducts(filtered.slice(startIndex, endIndex));
   }, [searchTerm, currentPage, allProducts]);
 
-  // ... (Toast/Modal fonksiyonları aynı)
+  
   const showFavoriteToast = (message: string) => { setToast({ show: true, message }); setTimeout(() => { setToast({ show: false, message: '' }); }, 2000); };
   const handleToggleFavorite = (e: React.MouseEvent, productId: string) => {
     e.preventDefault(); e.stopPropagation(); const newFavorites = new Set(favorites);

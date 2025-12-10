@@ -1,4 +1,3 @@
-// app/add-product/page.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -50,23 +49,21 @@ export default function AddProductPage() {
         setTimeout(() => { setNotification({ show: false, message: '' }); }, 3000);
     };
 
-    // --- GELİŞMİŞ INPUT MASKELEME FONKSİYONU ---
+    // INPUT MASKELEME FONKSİYONU 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         let isValidInput = true;
 
         switch (name) {
             case 'name':
-                // KURAL: İlk karakter MUTLAKA harf olmalı.
-                // Eğer değer boş değilse VE ilk karakter harf değilse engelle.
+                
                 if (value.length > 0 && !/^\p{L}/u.test(value.charAt(0))) {
                     isValidInput = false;
                 }
                 break;
 
             case 'seller':
-                // KURAL: Sadece Harf, Rakam, Boşluk, Nokta ve Tire.
-                // Ayrıca ilk karakter harf veya rakam olmalı (boşluk/nokta ile başlayamaz).
+
                 if (value !== '') {
                     if (!/^[\p{L}0-9\s.-]*$/u.test(value)) isValidInput = false;
                     // İlk karakter kontrolü
@@ -76,41 +73,39 @@ export default function AddProductPage() {
 
             case 'stock':
             case 'reviewCount':
-                // KURAL: Sadece Rakam.
+                // Sadece Rakam.
                 if (value !== '' && !/^\d*$/.test(value)) isValidInput = false;
                 break;
 
             case 'price':
             case 'discountedPrice':
-                // KURAL: Rakam, nokta, virgül.
+                
                 if (value !== '' && !/^[\d.,]*$/.test(value)) isValidInput = false;
                 break;
 
             case 'rating':
-                // KURAL: Sadece 0-5 arası sayılar ve ondalık.
-                // Sadece nokta veya virgül girilmesini engelle (örn: "." veya ",")
-                // Yapı: [0-5] ile başlamalı, opsiyonel olarak [.,] ve rakamlar gelebilir.
+               
                 if (value !== '') {
-                    // 1. Sadece izin verilen karakterler mi?
+                    
                     if (!/^[\d.,]*$/.test(value)) {
                         isValidInput = false; 
                     } else {
-                        // 2. Mantıksal kontrol:
+                        // Mantıksal kontrol:
                         // Sadece "." veya "," ise engelle
                         if (value === '.' || value === ',') isValidInput = false;
                         
-                        // 5'ten büyükse engelle (örn: 6)
+                        // 5'ten büyükse engelle 
                         const num = parseFloat(value.replace(',', '.'));
                         if (!isNaN(num) && num > 5) isValidInput = false;
                         
-                        // İkinci bir nokta/virgül girişini engelle (örn: 4.5.)
+                        // İkinci bir nokta/virgül girişini engelle 
                         if ((value.match(/[.,]/g) || []).length > 1) isValidInput = false;
                     }
                 }
                 break;
 
             case 'sizes':
-                // KURAL: Harf, Rakam, Virgül, Boşluk
+                // Harf, Rakam, Virgül, Boşluk
                 if (value !== '' && !/^[a-zA-Z0-9,\s]*$/.test(value)) isValidInput = false;
                 break;
 
@@ -125,7 +120,7 @@ export default function AddProductPage() {
 
     // URL İÇİN ÖZEL MASKELEME
     const handleImageUrlChange = (index: number, value: string) => {
-        // KURAL: Boşluk içeremez (URL mantığına aykırı).
+        // Boşluk içeremez 
         if (value.includes(' ')) return;
 
         const newImageUrls = [...product.imageUrls];

@@ -1,10 +1,9 @@
-// lib/storage.ts
 import { Product, CartItem } from '@/types';
 
 const PRODUCTS_KEY = 'products';
 const CART_KEY = 'cart';
 
-// --- ÜRÜN FONKSİYONLARI (DEĞİŞİKLİK YOK) ---
+// ÜRÜN FONKSİYONLARI
 export const getProductsFromStorage = (): Product[] => {
   if (typeof window === 'undefined') return [];
   const productsJson = localStorage.getItem(PRODUCTS_KEY);
@@ -44,12 +43,11 @@ export const generateUniqueId = (): string => {
   return newId;
 };
 
-// --- SEPET FONKSİYONLARI (GÜNCELLENDİ) ---
+// SEPET FONKSİYONLARI 
 
-// Olay Tetikleyici (Header'ı uyandırmak için)
+// Olay Tetikleyici
 const dispatchCartEvent = () => {
   if (typeof window !== 'undefined') {
-    // 'cartUpdated' adında özel bir olay yayınla
     window.dispatchEvent(new Event('cartUpdated'));
   }
 };
@@ -63,7 +61,7 @@ export const getCartItems = (): CartItem[] => {
 export const saveCartItems = (items: CartItem[]): void => {
   if (typeof window !== 'undefined') {
     localStorage.setItem(CART_KEY, JSON.stringify(items));
-    dispatchCartEvent(); // <-- Kaydettikten sonra Header'a haber ver
+    dispatchCartEvent(); // Kaydettikten sonra Header'a haber ver
   }
 };
 

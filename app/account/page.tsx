@@ -1,4 +1,3 @@
-// app/account/page.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -73,14 +72,14 @@ export default function AccountPage() {
     if (userIndex !== -1) {
       const updatedUser = {
         ...users[userIndex],
-        ...formData, // Telefon, Cinsiyet vb. hepsi buradan gelir
+        ...formData, // Telefon, Cinsiyet vb. hepsi buradan gelir.
       };
 
-      // 1. Ana kullanıcı listesini güncelle
+      // Ana kullanıcı listesini güncelleme
       users[userIndex] = updatedUser;
       localStorage.setItem('users', JSON.stringify(users));
       
-      // 2. Aktif oturumu güncelle (KRİTİK NOKTA)
+      // Aktif oturumu güncelle 
       localStorage.setItem('currentUser', JSON.stringify(updatedUser));
 
       setNotification({ show: true, message: 'Kullanıcı bilgileri başarıyla güncellendi.' });
@@ -89,7 +88,7 @@ export default function AccountPage() {
       setTimeout(() => window.location.reload(), 1000);
     }
   };
-  // ... (Geri kalan JSX aynı) ...
+  
   const inputClass = "w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-700 text-sm focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none transition-all";
   const labelClass = "block text-sm font-bold text-gray-700 mb-2";
   const selectClass = "w-full px-4 py-3 bg-white border border-gray-200 rounded-lg text-gray-700 text-sm focus:ring-2 focus:ring-orange-200 focus:border-orange-400 outline-none transition-all appearance-none";

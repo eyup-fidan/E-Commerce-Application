@@ -24,30 +24,30 @@ export default function Pagination({ totalItems, itemsPerPage, currentPage }: Pa
     return `${pathname}?${params.toString()}`;
   };
 
-  // --- AKILLI SAYFALANDIRMA MANTIĞI ---
+  // AKILLI SAYFALANDIRMA 
   const getPageNumbers = () => {
     const pageNumbers = [];
     const maxVisiblePages = 5; // Ortada kaç sayı görünsün
 
     if (totalPages <= 7) {
-      // Toplam sayfa azsa hepsini göster (1 2 3 4 5 6 7)
+      // Toplam sayfa azsa hepsini göster 
       for (let i = 1; i <= totalPages; i++) {
         pageNumbers.push(i);
       }
     } else {
       // Toplam sayfa çoksa özetle
       if (currentPage <= 4) {
-        // Başlardaysak: 1 2 3 4 5 ... 20
+        // Başlardaysak
         for (let i = 1; i <= 5; i++) pageNumbers.push(i);
         pageNumbers.push('...');
         pageNumbers.push(totalPages);
       } else if (currentPage >= totalPages - 3) {
-        // Sonlardaysak: 1 ... 16 17 18 19 20
+        // Sonlardaysak
         pageNumbers.push(1);
         pageNumbers.push('...');
         for (let i = totalPages - 4; i <= totalPages; i++) pageNumbers.push(i);
       } else {
-        // Ortadaysak: 1 ... 14 15 16 ... 20
+        // Ortadaysak
         pageNumbers.push(1);
         pageNumbers.push('...');
         pageNumbers.push(currentPage - 1);
@@ -62,19 +62,19 @@ export default function Pagination({ totalItems, itemsPerPage, currentPage }: Pa
 
   const pages = getPageNumbers();
 
-  // --- STİLLER ---
+  
   const baseButtonClass = "flex items-center justify-center w-10 h-10 rounded-lg border transition-all duration-200 text-sm font-medium";
   
-  // Aktif Sayfa (Mavi)
+  // Aktif Sayfa 
   const activeClass = "bg-blue-600 border-blue-600 text-white shadow-md scale-105";
   
-  // Pasif Sayfa (Beyaz)
+  // Pasif Sayfa 
   const inactiveClass = "bg-white border-gray-200 text-gray-600 hover:bg-gray-50 hover:text-blue-600 hover:border-blue-200";
   
   // Ok Butonları
   const arrowClass = "bg-white border-gray-200 text-gray-500 hover:bg-gray-100 hover:text-gray-800 disabled:opacity-40 disabled:hover:bg-white disabled:cursor-not-allowed";
 
-  // ... (Noktalar)
+  // Noktalar
   const ellipsisClass = "flex items-end justify-center w-10 h-10 pb-2 text-gray-400 tracking-widest select-none";
 
   return (

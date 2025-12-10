@@ -1,4 +1,4 @@
-// Bu, Heroicons'tan alınmış standart bir sol ok ikonudur.
+// Sol ok ikonu
 export default function ChevronLeftIcon() {
   return (
     <svg 

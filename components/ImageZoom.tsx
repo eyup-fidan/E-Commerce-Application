@@ -8,7 +8,7 @@ interface ImageZoomProps {
   zoomScale?: number;
 }
 
-// Büyütecin (Lens) boyutunu burada sabit olarak belirleyelim
+// Lensin boyutu sabit 
 const LENS_WIDTH = 200; // Lensin genişliği
 const LENS_HEIGHT = 200; // Lensin yüksekliği
 
@@ -24,7 +24,7 @@ export default function ImageZoom({ src, alt, zoomScale = 2.5 }: ImageZoomProps)
 
     const { left, top, width, height } = imgRef.current.getBoundingClientRect();
     
-    // Farenin görsel üzerindeki ham pozisyonu
+    // Fare pozisyonunu hesapla (sayfa kaydırma dahil)
     const mouseX = e.pageX - left - window.scrollX;
     const mouseY = e.pageY - top - window.scrollY;
 
@@ -32,7 +32,7 @@ export default function ImageZoom({ src, alt, zoomScale = 2.5 }: ImageZoomProps)
     let newLensX = mouseX - LENS_WIDTH / 2;
     let newLensY = mouseY - LENS_HEIGHT / 2;
 
-    // Lensin resim sınırları içinde kalmasını sağla (clamping)
+    // Lensin resim sınırları içinde kalmasını sağla 
     if (newLensX < 0) newLensX = 0;
     if (newLensY < 0) newLensY = 0;
     if (newLensX > width - LENS_WIDTH) newLensX = width - LENS_WIDTH;
@@ -40,7 +40,7 @@ export default function ImageZoom({ src, alt, zoomScale = 2.5 }: ImageZoomProps)
     
     setLensPosition({ x: newLensX, y: newLensY });
 
-    // Arka plan pozisyonunu lensin pozisyonuna göre ayarla (yüzdesel)
+    // Arka plan pozisyonunu lensin pozisyonuna göre ayarla 
     const bgPosX = (newLensX / (width - LENS_WIDTH)) * 100;
     const bgPosY = (newLensY / (height - LENS_HEIGHT)) * 100;
 
@@ -53,16 +53,16 @@ export default function ImageZoom({ src, alt, zoomScale = 2.5 }: ImageZoomProps)
       onMouseEnter={() => setShowZoom(true)}
       onMouseLeave={() => setShowZoom(false)}
     >
-      {/* 1. Ana Görsel */}
+      {/* Ana Görsel */}
       <img
         ref={imgRef}
         src={src}
         alt={alt}
-        className="w-full h-96 object-contain rounded-lg cursor-none" // İmleci gizle, lens kendi imlecimiz olacak
+        className="w-full h-96 object-contain rounded-lg cursor-none" // İmleci gizle
         onMouseMove={handleMouseMove}
       />
 
-      {/* 2. Büyüteç (Lens) - Fareyi takip eden kare */}
+      {/* Büyüteç (Lens) - Fareyi takip eden kare */}
       {showZoom && (
         <div
           className="
@@ -78,12 +78,12 @@ export default function ImageZoom({ src, alt, zoomScale = 2.5 }: ImageZoomProps)
             height: `${LENS_HEIGHT}px`,
             top: `${lensPosition.y}px`,
             left: `${lensPosition.x}px`,
-            transform: 'translateZ(0)', // GPU hızlandırma için
+            transform: 'translateZ(0)', // Performans için
           }}
         />
       )}
 
-      {/* 3. Büyütülmüş Zoom Paneli */}
+      {/* Büyütülmüş Zoom Paneli */}
       {showZoom && (
         <div 
           className="

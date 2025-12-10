@@ -1,4 +1,3 @@
-// tailwind.config.ts
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -9,7 +8,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      // Container ayarı (değişiklik yok)
+      // Container ayarı 
       container: {
         center: true,
         padding: '1rem', 
@@ -18,7 +17,7 @@ const config: Config = {
         },
       },
 
-      // Animasyon kodları (değişiklik yok)
+      // Animasyon kodları 
       keyframes: {
         'fade-in-down': {
           '0%': { opacity: '0', transform: 'translateY(-20px)' },
@@ -36,9 +35,9 @@ const config: Config = {
     },
   },
   
-  // Eklenti 'plugins' dizisinden KALDIRILDI.
+  
   plugins: [
-    // require('tailwind-scrollbar-hide') <-- BU SATIRI SİLDİK
+    
   ],
 }
 export default config

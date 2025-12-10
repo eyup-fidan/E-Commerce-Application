@@ -12,7 +12,7 @@ interface ProductCardProps {
   onToggleFavorite: (e: React.MouseEvent) => void;
 }
 
-// --- GELİŞMİŞ AKILLI YILDIZ BİLEŞENİ ---
+// YILDIZ BİLEŞENİ
 const Star = ({ percentage, idPrefix }: { percentage: number; idPrefix: string }) => {
   const gradientId = `grad-${idPrefix}`;
 
@@ -20,7 +20,7 @@ const Star = ({ percentage, idPrefix }: { percentage: number; idPrefix: string }
     <svg 
       className="w-4 h-4" 
       viewBox="0 0 24 24" 
-      // YENİ: Yıldızın sınırlarını belli etmek için ince bir çerçeve (stroke) ekledik
+      // Yıldızın sınırlarını belli etmek için ince bir çerçeve 
       stroke="#9CA3AF" 
       strokeWidth="1" 
       strokeLinecap="round" 
@@ -38,7 +38,7 @@ const Star = ({ percentage, idPrefix }: { percentage: number; idPrefix: string }
       {/* Yıldız Şekli */}
       <path
         fill={`url(#${gradientId})`}
-        // Stroke'un (çerçevenin) üzerine binmemesi için fill-rule ekledik
+        // Stroke'un üzerine binmemesi için fill-rule ekledik.
         d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
       />
     </svg>
@@ -61,8 +61,6 @@ export default function ProductCard({
     const stars = [];
     for (let i = 1; i <= 5; i++) {
       // Matematiksel Hesaplama:
-      // 4.1 Puan için 5. yıldız: (4.1 - 4) * 100 = %10 Dolu
-      // 4.9 Puan için 5. yıldız: (4.9 - 4) * 100 = %90 Dolu
       let fill = Math.max(0, Math.min(100, (rating - (i - 1)) * 100));
       
       stars.push(
@@ -117,7 +115,7 @@ export default function ProductCard({
           )}
         </div>
         
-        {/* --- YILDIZ ALANI --- */}
+        {/* YILDIZ ALANI */}
         {rating > 0 ? (
           <div className="flex items-center gap-1.5 mt-2">
             <span className="text-sm font-bold text-gray-800">{rating.toFixed(1)}</span> 

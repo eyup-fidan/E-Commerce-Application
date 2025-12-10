@@ -1,4 +1,3 @@
-// app/category/[slug]/page.tsx
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -49,7 +48,7 @@ export default function CategoryPage() {
     setCurrentPageProducts(filtered.slice(startIndex, endIndex));
   }, [searchTerm, currentPage, allProducts]);
 
-  // ... (Toast ve Modal fonksiyonları aynı)
+ 
   const showFavoriteToast = (message: string) => { setToast({ show: true, message }); setTimeout(() => { setToast({ show: false, message: '' }); }, 2000); };
   const handleToggleFavorite = (e: React.MouseEvent, productId: string) => {
     e.preventDefault(); e.stopPropagation(); const newFavorites = new Set(favorites);
@@ -81,12 +80,7 @@ export default function CategoryPage() {
       
       {currentPageProducts.length > 0 ? (
         <>
-          {/* HİZALAMA DÜZELTME: 
-             'grid-cols-1 sm:grid-cols-2 ...' standarttır.
-             Ürünlerin soldan başlaması için ekstra bir şey gerekmez, ancak
-             eğer 'items-center' veya 'justify-center' varsa onu kaldırmalıyız.
-             Burada temiz bir grid yapısı kullanıyoruz.
-          */}
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-fr">
             {currentPageProducts.map((product) => (
               <ProductCard 

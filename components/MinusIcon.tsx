@@ -10,4 +10,4 @@ export default function MinusIcon() {
       <path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
     </svg>
   );
-}
+} 

@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -34,7 +33,7 @@ export default function RootLayout({
 
         <HelpWidget />
         
-        {/* 2. BURAYA DİKKAT: CookieConsent KESİNLİKLE BURADA OLMALI */}
+
         <CookieConsent />
       </body>
     </html>

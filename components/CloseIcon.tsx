@@ -1,4 +1,3 @@
-// components/CloseIcon.tsx
 export default function CloseIcon() {
   return (
     <svg

@@ -1,17 +1,10 @@
-/* app/globals.css */
 @import "tailwindcss";
 
-/* Tüm animasyonlar tailwind.config.ts'e taşındı. */
-
-/* KATEGORİ BARI İÇİN MANUEL STİLLER */
-
-/* Firefox */
 .scrollbar-hide-custom {
   scrollbar-width: none;
-  -ms-overflow-style: none;  /* IE 10+ */
+  -ms-overflow-style: none;  
 }
 
-/* Chrome, Safari, Opera */
 .scrollbar-hide-custom::-webkit-scrollbar {
   display: none;
 }

@@ -8,7 +8,7 @@ import { getProductsFromStorage } from '@/lib/storage';
 import { formatPriceWithoutSymbol } from '@/lib/format';
 import Notification from '@/components/Notification';
 
-// --- TİPLER ---
+// TİPLER 
 interface Address {
   id: string;
   title: string; 
@@ -27,7 +27,7 @@ interface CreditCard {
   cvv: string;
 }
 
-// --- BANKA LİSTESİ (GERÇEKÇİ GRADIENT GÖRÜNÜMLER) ---
+// BANKA LİSTESİ 
 const BANKS = [
     // Ziraat: Kırmızı ton geçişli
     { id: 'ziraat', name: 'Ziraat Bankası', gradient: 'bg-gradient-to-r from-red-700 to-red-500', text:'text-white' },
@@ -41,7 +41,7 @@ const BANKS = [
     { id: 'akbank', name: 'Akbank', gradient: 'bg-gradient-to-r from-[#D70C18] to-[#f03e48]', text:'text-white' },
 ];
 
-// --- UZUN YASAL METİNLER (GERÇEKÇİ KLONLAR) ---
+// UZUN YASAL METİNLER 
 const PRE_INFO_TEXT = `
 MADDE 1 - KONU
 İşbu Ön Bilgilendirme Formu'nun konusu, SATICI'nın, ALICI'ya satışını yaptığı, aşağıda nitelikleri ve satış fiyatı belirtilen ürünün/ürünlerin satışı ve teslimi ile ilgili olarak 6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği hükümleri gereğince bilgilendirilmesidir.
@@ -97,7 +97,7 @@ MADDE 6 - UYUŞMAZLIKLARIN ÇÖZÜMÜ
 (Bu metin örnektir ve gerçek bir sözleşmenin tamamını yansıtmamaktadır...)
 `;
 
-// --- İKONLAR ---
+// İKONLAR 
 const LocationIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-orange-600"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" /></svg>);
 const CreditCardIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5 text-orange-600"><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z" /></svg>);
 const PlusIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" /></svg>);
@@ -145,7 +145,7 @@ export default function CheckoutPage() {
     setTimeout(() => setNotification({ show: false, message: '' }), 3000);
   };
 
-  // --- HESAPLAMALAR ---
+  // HESAPLAMALAR 
   const totalPrice = cartItems.reduce((total, item) => {
     const product = products.find(p => p.id === item.productId);
     if (!product) return total;
@@ -155,7 +155,7 @@ export default function CheckoutPage() {
   const cargoPrice = totalPrice > 5000 ? 0 : 49.90;
   const grandTotal = totalPrice + cargoPrice;
 
-  // --- ADRES İŞLEMLERİ ---
+  // ADRES İŞLEMLERİ
   const handleAddressInput = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
       const { name, value } = e.target;
       if (name === 'city' || name === 'district') {
@@ -197,7 +197,7 @@ export default function CheckoutPage() {
       if (selectedAddressId === id) setSelectedAddressId(null);
   };
 
-  // --- KART İŞLEMLERİ ---
+  // KART İŞLEMLERİ 
   const handleCardInput = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
       const { name, value } = e.target;
       if (name === 'holderName') {
@@ -272,10 +272,10 @@ export default function CheckoutPage() {
 
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
         
-        {/* --- SOL KOLON (FORM) --- */}
+        
         <div className="lg:col-span-2 space-y-6">
             
-            {/* 1. ADRES */}
+            
             <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <div className="flex items-center justify-between mb-6">
                     <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2"><LocationIcon /> Teslimat Adresi</h2>
@@ -316,7 +316,7 @@ export default function CheckoutPage() {
                 </div>
             </div>
 
-            {/* 2. ÖDEME */}
+            
             <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
                 <div className="flex items-center justify-between mb-6">
                     <h2 className="text-xl font-bold text-gray-800 flex items-center gap-2"><CreditCardIcon /> Ödeme Yöntemi</h2>
@@ -341,7 +341,7 @@ export default function CheckoutPage() {
                     {cards.map(card => {
                         const bank = BANKS.find(b => b.id === card.bank) || BANKS[0];
                         return (
-                            // Kart görünümü küçültüldü (h-36), çip kaldırıldı, gradient eklendi
+                            
                             <div key={card.id} onClick={() => setSelectedCardId(card.id)} className={`group relative cursor-pointer rounded-xl transition-all overflow-hidden w-full md:w-80 mx-auto md:mx-0 shadow-sm hover:shadow-md ${selectedCardId === card.id ? 'ring-4 ring-orange-500 ring-offset-2' : 'opacity-90 hover:opacity-100'}`}>
                                 <div className={`${bank.gradient} ${bank.text} p-5 h-36 flex flex-col justify-between relative rounded-xl`}>
                                     <div className="flex justify-between items-start">
@@ -367,7 +367,7 @@ export default function CheckoutPage() {
             </div>
         </div>
 
-        {/* --- SAĞ KOLON (ÖZET) --- */}
+        
         <div className="lg:col-span-1 relative">
             <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100 sticky top-24 z-20">
                 <h3 className="text-lg font-bold text-gray-800 mb-6">Sipariş Özeti</h3>
@@ -397,7 +397,7 @@ export default function CheckoutPage() {
 
       </div>
 
-      {/* --- MERKEZİ YASAL METİN MODALI (GERÇEKÇİ VE UZUN) --- */}
+      
       {infoPanel && infoPanel !== 'success' && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in">
             <div className="relative bg-white w-full max-w-2xl rounded-2xl shadow-2xl flex flex-col max-h-[80vh]">
@@ -417,7 +417,7 @@ export default function CheckoutPage() {
         </div>
       )}
 
-      {/* --- BAŞARI EKRANI --- */}
+      
       {infoPanel === 'success' && (
         <div className="fixed inset-0 z-[100] bg-white flex items-center justify-center p-4 animate-fade-in-down">
             <div className="text-center max-w-md w-full">

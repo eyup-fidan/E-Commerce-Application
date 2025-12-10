@@ -1,4 +1,3 @@
-// components/InfoIcon.tsx 
 export default function InfoIcon() {
   return (
     <svg 

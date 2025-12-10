@@ -1,4 +1,3 @@
-// components/Notification.tsx
 interface NotificationProps {
   message: string;
   show: boolean;

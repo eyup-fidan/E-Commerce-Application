@@ -1,10 +1,9 @@
-// components/CameraIcon.tsx
+
 import React from 'react';
 
 export default function CameraIcon() {
   return (
-    // Bu SVG ikonu, bir kamera ve üzerinde flaş sembolü içerir.
-    // Daha modern ve sade bir çizgi ikonudur.
+    
     <svg 
       xmlns="http://www.w3.org/2000/svg" 
       className="h-4 w-4 text-gray-500" // Boyut ve rengi ayarla

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-// --- İKONLAR ---
+// İKONLAR 
 const CookieIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="w-6 h-6 text-white">
     <path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" />
@@ -32,9 +32,6 @@ export default function CookieConsent() {
   const [showDetails, setShowDetails] = useState(false); 
 
   useEffect(() => {
-    // NOT: Normalde burada localStorage kontrolü yapardık.
-    // Ama sen her açılışta görmek istediğin için kontrolü kaldırdık.
-    // Artık sayfa her yenilendiğinde 1 saniye sonra bu kutu çıkacak.
     const timer = setTimeout(() => setIsVisible(true), 1000);
     return () => clearTimeout(timer);
   }, []);
@@ -42,7 +39,6 @@ export default function CookieConsent() {
   const handleClose = (decision: 'accepted' | 'rejected') => {
     setIsClosing(true);
     setTimeout(() => {
-      // Tercihi yine de kaydediyoruz (İleride mantığı değiştirmek istersen diye)
       localStorage.setItem('cookie_consent', decision);
       setIsVisible(false);
     }, 300);
@@ -62,7 +58,7 @@ export default function CookieConsent() {
         
         <div className="absolute -top-20 -right-20 w-40 h-40 bg-indigo-500 rounded-full blur-[80px] opacity-20 pointer-events-none"></div>
 
-        {/* --- GÖRÜNÜM 1: ANA EKRAN --- */}
+        {/* ANA EKRAN */}
         {!showDetails ? (
           <div className="animate-fade-in-down">
             <div className="flex items-center gap-3 mb-3 relative z-10">
@@ -99,7 +95,7 @@ export default function CookieConsent() {
             </div>
           </div>
         ) : (
-          /* --- GÖRÜNÜM 2: DETAY/POLİTİKA EKRANI --- */
+          /* DETAY/POLİTİKA EKRANI */
           <div className="animate-fade-in-down h-full flex flex-col">
             
             <div className="flex items-center gap-3 mb-4 border-b border-white/10 pb-4">

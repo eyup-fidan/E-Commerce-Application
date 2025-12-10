@@ -5,7 +5,7 @@ interface ToastProps {
   productName: string;
 }
 
-// Yeni "Uyarı" ikonu bileşeni
+// Uyarı ikonu bileşeni
 function WarningIcon() {
   return (
     <svg className="w-6 h-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>

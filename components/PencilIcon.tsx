@@ -1,8 +1,8 @@
-// Bu ikon, "güncelleme/düzenleme" işlemini temsil eder.
+// Güncelleme
 export default function PencilIcon() {
   return (
     <svg 
-      className="w-4 h-4" // Boyutu küçülttük
+      className="w-4 h-4" 
       fill="none" 
       viewBox="0 0 24 24" 
       stroke="currentColor" 

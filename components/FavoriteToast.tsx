@@ -5,7 +5,7 @@ interface ToastProps {
 
 export default function FavoriteToast({ message, show }: ToastProps) {
   if (!show) return null;
-
+ 
   return (
     // Ekranın üst-ortasına sabitlenmiş, animasyonlu bildirim
     <div className="fixed top-5 left-1/2 -translate-x-1/2 z-50 animate-fade-in-down">

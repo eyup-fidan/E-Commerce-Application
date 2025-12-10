@@ -1,4 +1,3 @@
-// app/favorites/page.tsx
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -81,7 +80,7 @@ export default function FavoritesPage() {
       
       {currentPageProducts.length > 0 ? (
         <>
-          {/* DÜZELTME: Grid yapısı 'justify-start' ve 'content-start' ile sola yaslandı */}
+          
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 content-start">
             {currentPageProducts.map((product) => (
               <ProductCard 

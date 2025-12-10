@@ -1,4 +1,3 @@
-// components/HeartIcon.tsx
 interface HeartIconProps {
   isFavorite: boolean;
   onClick: (e: React.MouseEvent) => void; // Tıklama olayını alacak
@@ -7,7 +6,7 @@ interface HeartIconProps {
 export default function HeartIcon({ isFavorite, onClick }: HeartIconProps) {
   return (
     
-    // SVG'yi şık, yuvarlak, gölgeli bir buton (div) içine aldık.
+    
     <div
       onClick={onClick}
       className={`
@@ -23,7 +22,7 @@ export default function HeartIcon({ isFavorite, onClick }: HeartIconProps) {
       `}
       aria-label={isFavorite ? "Favorilerden kaldır" : "Favorilere ekle"}
     >
-      {/* SVG ikonu artık bu div'in içinde ortalanıyor */}
+      
       <svg 
         className={`
           w-5 h-5 
@@ -31,7 +30,7 @@ export default function HeartIcon({ isFavorite, onClick }: HeartIconProps) {
           transition-all duration-200
           ${isFavorite 
             ? 'fill-red-500 stroke-red-600' // Favori ise: Kırmızı ve dolu
-            : 'fill-none stroke-gray-700'  // Favori değilse: Boş (sadece çerçeve)
+            : 'fill-none stroke-gray-700'  // Favori değilse: Boş 
           }
         `}
         viewBox="0 0 24 24" 

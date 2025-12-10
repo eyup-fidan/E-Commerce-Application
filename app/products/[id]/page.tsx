@@ -2,9 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
-// --- YENİ IMPORTLAR ---
 import { getProductsFromStorage, addToCart } from '@/lib/storage';
-import { Product, CartItem } from '@/types'; // <-- CartItem'ı import et
+import { Product, CartItem } from '@/types'; 
 import Link from 'next/link';
 import Notification from '@/components/Notification';
 import MinusIcon from '@/components/MinusIcon'; 
@@ -62,34 +61,34 @@ export default function ProductDetailPage() {
   else if (isClothingCategory) { sizesToShow = clothingSizes; sizeLabel = "Beden Seç"; } 
   else if (hasCustomSizes) { sizesToShow = product.sizes!; sizeLabel = "Beden/Tip Seç"; }
   
-  // --- handleAddToCart FONKSİYONU GÜNCELLENDİ ---
+  
   const handleAddToCart = () => {
     if (!product) return;
     
-    // 1. Beden Gerekli mi ve Seçildi mi?
+    // Beden Gerekli mi ve Seçildi mi?
     if (shouldShowSizes && !selectedSize) {
         showNotification(`Lütfen bir ${isShoeCategory ? 'numara' : 'beden'} seçin.`);
         return;
     }
 
-    // 2. Adet Kontrolü
+    // Adet Kontrolü
     const currentQuantity = Number(quantity);
     if (currentQuantity > product.stock) {
         showNotification(`Stokta yalnızca ${product.stock} adet kaldı!`);
         return;
     }
     
-    // 3. Eklenecek 'CartItem' nesnesini oluştur
+    // Eklenecek 'CartItem' nesnesini oluştur
     const newItem: CartItem = {
       productId: product.id,
       quantity: currentQuantity,
-      size: selectedSize // (örn: "42" veya "M" veya null)
+      size: selectedSize 
     };
 
-    // 4. 'storage.ts'deki fonksiyonu çağırarak sepete ekle
+    // 'storage.ts'deki fonksiyonu çağırarak sepete ekle
     addToCart(newItem);
 
-    // 5. Kullanıcıyı bilgilendir
+    // Kullanıcıyı bilgilendir
     const sizeInfo = selectedSize ? `(${selectedSize}${isShoeCategory ? ' Numara' : ' Beden'})` : '';
     showNotification(`${currentQuantity} adet ${sizeInfo} ${product.name} sepete eklendi.`);
   };
@@ -102,7 +101,7 @@ export default function ProductDetailPage() {
           &larr; Ürün Listesine Dön
         </Link>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* Sol Taraf - Görseller */}
+          
           <div>
             <div className="relative">
               {isActiveMediaVideo ? (
@@ -144,7 +143,7 @@ export default function ProductDetailPage() {
             </div>
           </div>
           
-          {/* Sağ Taraf - Bilgiler */}
+          
           <div>
             <h1 className="text-4xl font-bold text-gray-900">{product.name}</h1>
             <div className="flex items-baseline space-x-3 mt-4 flex-wrap">

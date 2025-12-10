@@ -1,15 +1,14 @@
-// components/HelpWidget.tsx
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
 
-// --- İKONLAR ---
+// İKONLAR
 const CloseIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>);
 const ChatIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-7 h-7"><path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.159 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" /></svg>);
 const SendIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-4 h-4 ml-1"><path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" /></svg>);
 const RefreshIcon = () => (<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" /></svg>);
 
-// --- AVATAR ---
+// AVATAR
 const AgentAvatar = () => (
   <div className="w-9 h-9 bg-white rounded-full flex items-center justify-center shadow-sm overflow-hidden flex-shrink-0">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 text-blue-600">
@@ -18,7 +17,7 @@ const AgentAvatar = () => (
   </div>
 );
 
-// --- TİPLER ---
+// TİPLER 
 type MessageType = 'text' | 'options' | 'order-form' | 'contact-form' | 'return-info';
 type Sender = 'bot' | 'user';
 
@@ -101,9 +100,9 @@ export default function HelpWidget() {
     setTimeout(() => setIsOpen(false), 100); 
   };
 
-  // --- İÇERİK BİLEŞENLERİ ---
+  // İÇERİK BİLEŞENLERİ 
 
-  // 1. SİPARİŞ SORGULAMA FORMU (VALIDASYONLU)
+  // SİPARİŞ SORGULAMA FORMU
   const OrderForm = () => {
     const [val, setVal] = useState('');
     const [status, setStatus] = useState<'idle' | 'loading' | 'done'>('idle');
@@ -144,7 +143,7 @@ export default function HelpWidget() {
     );
   };
 
-  // 2. İLETİŞİM FORMU (GENİŞLETİLMİŞ SEÇENEKLER)
+  // İLETİŞİM FORMU 
   const ContactForm = () => {
     const [sent, setSent] = useState(false);
     const [formData, setFormData] = useState({ subject: '', msg: '' });
@@ -163,7 +162,7 @@ export default function HelpWidget() {
         <form onSubmit={send} className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm w-64 mt-2">
             <label className="text-xs font-bold text-gray-500 mb-1 block">KONU SEÇİNİZ</label>
             
-            {/* --- GENİŞLETİLMİŞ SEÇENEKLER BURADA --- */}
+            {/* GENİŞLETİLMİŞ SEÇENEKLER */}
             <select 
                 className="w-full border border-gray-300 rounded p-2 text-xs mb-2 outline-none bg-white"
                 onChange={e => setFormData({...formData, subject: e.target.value})}
@@ -194,7 +193,7 @@ export default function HelpWidget() {
     );
   };
 
-  // 3. İADE BİLGİ KARTI
+  // İADE BİLGİ KARTI
   const ReturnInfo = () => (
     <div className="bg-white p-3 rounded-lg border border-gray-200 shadow-sm w-64 mt-2 space-y-2">
         <div className="flex gap-2 items-start">

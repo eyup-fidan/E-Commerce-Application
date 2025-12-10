@@ -1,4 +1,3 @@
-// app/cart/page.tsx
 'use client';
 
 import { useEffect, useState } from 'react';
@@ -6,7 +5,7 @@ import Link from 'next/link';
 import { Product, CartItem } from '@/types';
 import { getProductsFromStorage, getCartItems, removeFromCart, updateCartItemQuantity, saveCartItems } from '@/lib/storage';
 import CartItemCard from '@/components/CartItemCard';
-import { formatPriceWithoutSymbol } from '@/lib/format'; // Fiyat formatı için
+import { formatPriceWithoutSymbol } from '@/lib/format'; 
 
 interface MergedCartItem {
   cartInfo: CartItem;
@@ -17,14 +16,14 @@ export default function CartPage() {
   const [mergedCart, setMergedCart] = useState<MergedCartItem[]>([]);
   const [allProducts, setAllProducts] = useState<Product[]>([]);
 
-  // Sepeti Yükleme ve "Hayalet Ürün" Temizliği
+  // Sepeti Yükleme ve Geçersiz Ürünleri Temizleme
   const loadCart = () => {
     const products = getProductsFromStorage();
     const cartItems = getCartItems();
     
     setAllProducts(products);
 
-    // 1. Geçerli ürünleri eşleştir
+    // Geçerli ürünleri eşleştir
     const validItems: MergedCartItem[] = [];
     const validCartItemsForStorage: CartItem[] = [];
     let hasInvalidItems = false;
@@ -44,7 +43,7 @@ export default function CartPage() {
 
     setMergedCart(validItems);
 
-    // 2. Eğer silinmiş ürünler varsa localStorage'dan da temizle
+    // Eğer silinmiş ürünler varsa localStorage'dan da temizle
     if (hasInvalidItems) {
       saveCartItems(validCartItemsForStorage);
     }
@@ -87,7 +86,7 @@ export default function CartPage() {
       {mergedCart.length > 0 ? (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             
-            {/* SOL KOLON: ÜRÜN LİSTESİ */}
+            
             <div className="lg:col-span-2 flex flex-col gap-6">
             {mergedCart.map(({ cartInfo, productInfo }) => (
                 <CartItemCard
@@ -104,7 +103,7 @@ export default function CartPage() {
             ))}
             </div>
 
-            {/* SAĞ KOLON: SEPET ÖZETİ */}
+              
             <div className="lg:col-span-1">
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 sticky top-24">
                     <h2 className="text-lg font-bold text-gray-800 mb-4">Sipariş Özeti</h2>
@@ -124,7 +123,7 @@ export default function CartPage() {
                         <span className="text-xl font-bold text-orange-600">{formatPriceWithoutSymbol(totalPrice)} TL</span>
                     </div>
                     
-                    {/* YÖNLENDİRME BUTONU */}
+                    
                     <Link 
                         href="/checkout" 
                         className="block w-full bg-orange-600 text-white text-center py-3.5 rounded-lg font-bold hover:bg-orange-700 transition-colors shadow-lg shadow-orange-100"

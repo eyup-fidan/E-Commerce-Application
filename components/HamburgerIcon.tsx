@@ -1,4 +1,3 @@
-// components/HamburgerIcon.tsx
 export default function HamburgerIcon() {
   return (
     <svg

@@ -1,8 +1,8 @@
-// Bu, boş (gri) yıldız ikonudur
+// Boş (gri) yıldız ikonu
 export default function StarEmptyIcon() {
   return (
     <svg 
-      className="w-4 h-4 text-gray-300" // Rengi gri yaptık
+      className="w-4 h-4 text-gray-300" 
       fill="currentColor" 
       viewBox="0 0 20 20" 
       xmlns="http://www.w3.org/2000/svg"

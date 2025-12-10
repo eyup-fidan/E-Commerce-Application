@@ -1,8 +1,8 @@
-// Bu ikon, "silme" işlemini temsil eder.
+// Silme ikonu
 export default function TrashIcon() {
   return (
     <svg 
-      className="w-4 h-4" // Boyutu küçülttük
+      className="w-4 h-4" 
       fill="none" 
       viewBox="0 0 24 24" 
       stroke="currentColor" 

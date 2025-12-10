@@ -1,7 +1,7 @@
 /**
- * Bir sayıyı Türk Lirası (virgül ile) formatına çevirir, ancak ₺ sembolü olmadan.
- * @param {number} value - Formatlanacak sayı.
- * @returns {string} Formatlanmış sayı string'i (örn: "8.499,99").
+ * Bir sayıyı Türk Lirası formatına çevirir ancak ₺ sembolü olmadan.
+ * @param {number} value // Formatlanacak sayı.
+ * @returns {string} - Formatlanmış sayı string'i 
  */
 export const formatPriceWithoutSymbol = (value: number): string => {
     // 'tr-TR' (Türkiye) lokasyonunu kullanarak formatlama yapıyoruz.
@@ -10,5 +10,5 @@ export const formatPriceWithoutSymbol = (value: number): string => {
       maximumFractionDigits: 2,
     }).format(value);
     
-    return formatted; // örn: "8.499,99"
+    return formatted; 
 };

@@ -16,5 +16,5 @@ export interface Product {
 export interface CartItem {
   productId: string;      // Hangi ürün? (ID'si)
   quantity: number;       // Kaç adet?
-  size: string | null;    // Hangi beden? (örn: "42" veya "M" veya "Ayakkabı" değilse null)
+  size: string | null;    // Hangi beden? 
 }

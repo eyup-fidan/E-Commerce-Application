@@ -1,8 +1,8 @@
-// Bu ikon, Header'da "Sepetim" linkinin yanında duracak.
+// Sepetim İkonu
 export default function ShoppingCartIcon() {
   return (
     <svg 
-      className="w-5 h-5" // Boyutu diğer link ikonlarıyla (HeaderHeartIcon) aynı
+      className="w-5 h-5" 
       fill="none" 
       viewBox="0 0 24 24" 
       stroke="currentColor" 

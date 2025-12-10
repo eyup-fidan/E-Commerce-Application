@@ -1,4 +1,3 @@
-// components/ProfileModal.tsx
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -36,14 +35,14 @@ export default function ProfileModal({ isOpen, onClose, onUpdateSuccess }: Profi
   const handleUpdate = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // 1. Mevcut kullanıcı listesini al
+    // Mevcut kullanıcı listesini al
     const users = JSON.parse(localStorage.getItem('users') || '[]');
     
-    // 2. Şu anki kullanıcının indexini bul
+    // Şuanki kullanıcının indexini bul
     const userIndex = users.findIndex((u: any) => u.email === email);
 
     if (userIndex !== -1) {
-      // 3. Bilgileri güncelle
+      // Bilgileri güncelle
       const updatedUser = {
         ...users[userIndex],
         name: name,
@@ -52,16 +51,16 @@ export default function ProfileModal({ isOpen, onClose, onUpdateSuccess }: Profi
         password: password.trim() !== '' ? password : users[userIndex].password
       };
 
-      // 4. Listeyi güncelle ve kaydet
+      // Listeyi güncelle ve kaydet
       users[userIndex] = updatedUser;
       localStorage.setItem('users', JSON.stringify(users));
 
-      // 5. Oturumdaki kullanıcıyı güncelle ve kaydet
+      // Oturumdaki kullanıcıyı güncelle ve kaydet
       localStorage.setItem('currentUser', JSON.stringify(updatedUser));
 
       setSuccessMsg('Bilgileriniz başarıyla güncellendi.');
       
-      // 6. Ana sayfaya bildir ve kapat
+      // Ana sayfaya bildir ve kapat
       setTimeout(() => {
         onUpdateSuccess(updatedUser);
         onClose();

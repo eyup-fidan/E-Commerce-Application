@@ -1,8 +1,8 @@
-// Bu ikon, Header'da "Ürün Ekle" linki için kullanılacak
+// Ürün ekle ikonu
 export default function PlusIconHeader() {
   return (
     <svg 
-      className="w-6 h-6" // Diğer ikonlardan biraz daha büyük ve belirgin
+      className="w-6 h-6" 
       fill="none" 
       viewBox="0 0 24 24" 
       stroke="currentColor" 

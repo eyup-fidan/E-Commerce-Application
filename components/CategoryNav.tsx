@@ -1,4 +1,3 @@
-// components/CategoryNav.tsx
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
@@ -24,7 +23,6 @@ export default function CategoryNav() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Dropdown dışına tıklanınca kapatma
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
@@ -40,15 +38,12 @@ export default function CategoryNav() {
   };
 
   return (
-    // DÜZELTME BURADA:
-    // 1. '-mt-4': Sayfanın padding'ini yok sayıp yukarı yapıştırır.
-    // 2. '-mx-4': Kenar boşluklarını yok sayıp tam genişlik yapar.
-    // 3. 'mb-6': Altındaki içerikle mesafe bırakır.
+    
     <nav className="bg-white border-b border-gray-200 sticky top-0 z-30 shadow-sm -mt-4 -mx-4 mb-6" ref={dropdownRef}>
       
       <div className="max-w-6xl mx-auto px-4 h-10 relative flex items-center">
         
-        {/* --- 1. SOL TARAFA SABİT 'TÜM KATEGORİLER' BUTONU --- */}
+        {/* SABİT TÜM KATEGORİLER BUTONU */}
         <div className="flex-shrink-0 mr-4 border-r border-gray-200 pr-4 h-6 flex items-center">
             <button 
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
@@ -62,7 +57,7 @@ export default function CategoryNav() {
             </button>
         </div>
 
-        {/* --- 2. YATAY KAYDIRILABİLİR LİSTE --- */}
+        {/* YATAY KAYDIRILABİLİR LİSTE */}
         <div className="flex-grow relative overflow-hidden h-full">
              {/* Sol Fade */}
             <div className="absolute inset-y-0 left-0 w-4 bg-gradient-to-r from-white to-transparent pointer-events-none z-10" />
@@ -94,7 +89,7 @@ export default function CategoryNav() {
             <div className="absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-white to-transparent pointer-events-none z-10" />
         </div>
 
-        {/* --- 3. AÇILIR MENÜ (DROPDOWN) --- */}
+        {/* AÇILIR MENÜ */}
         {isDropdownOpen && (
             <div className="absolute top-full left-0 mt-0 w-64 bg-white rounded-b-xl shadow-xl border border-gray-100 border-t-0 z-50 overflow-hidden animate-fade-in-down">
                 <div className="py-2">

@@ -40,10 +40,10 @@ export default function CartItemCard({
         />
       </Link>
       
-      {/* 'sm:items-start' -> Tüm ızgara elemanlarını dikeyde üste hizala */}
+      
       <div className="flex-grow grid grid-cols-1 sm:grid-cols-4 gap-4 sm:items-start">
         
-        {/* Sol Taraf: İsim, Beden, Satıcı */}
+        {/* İsim, Beden, Satıcı */}
         <div className="flex flex-col sm:col-span-2">
           <Link href={`/products/${product.id}`} className="font-semibold text-gray-800 hover:text-blue-600">
             {product.name}
@@ -62,11 +62,6 @@ export default function CartItemCard({
           </button>
         </div>
 
-        {/* --- DEĞİŞİKLİK BURADA ---
-          Orta: Adet Seçici 
-          'sm:self-center' -> Bu sütun, 'items-start' kuralını
-                           ezip kendini dikeyde ortalayacak.
-        */}
         <div className="justify-self-start sm:justify-self-center sm:self-center">
           <div className="flex items-center bg-gray-100 rounded-full overflow-hidden shadow-sm border border-gray-200 w-36 h-10">
             <button 
@@ -92,7 +87,7 @@ export default function CartItemCard({
           </div>
         </div>
 
-        {/* Sağ Taraf: Fiyat ve Masaüstü Sil Butonu */}
+        {/* Fiyat ve Masaüstü Sil Butonu */}
         <div className="flex flex-col items-start sm:items-end justify-between sm:col-span-1 h-full">
           <span className="font-bold text-lg text-red-500">
             {formatPriceWithoutSymbol(totalPrice)}₺

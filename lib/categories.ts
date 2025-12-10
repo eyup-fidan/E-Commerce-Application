@@ -1,5 +1,3 @@
-// lib/categories.ts
-
 export const CATEGORIES = [
   { name: "Ayakkabı",     slug: "ayakkabi" },
   { name: "Giyim",        slug: "giyim" },

@@ -1,8 +1,8 @@
-// Bu, dolu (sarı) yıldız ikonudur
+// Dolu (sarı) yıldız ikonu
 export default function StarFilledIcon() {
   return (
     <svg 
-      className="w-4 h-4 text-yellow-400" // Rengi sarı yaptık
+      className="w-4 h-4 text-yellow-400" 
       fill="currentColor" 
       viewBox="0 0 20 20" 
       xmlns="http://www.w3.org/2000/svg"
