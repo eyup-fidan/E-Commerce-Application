@@ -18,7 +18,7 @@ export const addProductToStorage = (product: Product): void => {
   const products = getProductsFromStorage();
   products.push(product);
   saveProductsToStorage(products);
-};
+}; 
 export const deleteProductFromStorage = (productId: string): Product[] => {
     let products = getProductsFromStorage();
     products = products.filter(p => p.id !== productId);
