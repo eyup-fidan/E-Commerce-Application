@@ -167,7 +167,7 @@ export default function AuthModal({ isOpen, onClose, onLoginSuccess }: AuthModal
       if(resetCode.length < 4) { setError('Lütfen 4 haneli kodu giriniz.'); return; }
       setView('reset-password'); setError('');
   };
-  
+   
   const handleResetPassword = (e: React.FormEvent) => {
       e.preventDefault();
       if(newPassword.length < 6) { setError('Şifre en az 6 karakter olmalıdır.'); return; }
