@@ -15,7 +15,7 @@ interface ProductCardProps {
 // YILDIZ BİLEŞENİ
 const Star = ({ percentage, idPrefix }: { percentage: number; idPrefix: string }) => {
   const gradientId = `grad-${idPrefix}`;
-
+ 
   return (
     <svg 
       className="w-4 h-4" 

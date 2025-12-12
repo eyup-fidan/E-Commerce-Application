@@ -95,4 +95,4 @@ export default function HomePage() {
       <DeleteToast isOpen={isModalOpen} onClose={closeDeleteModal} onConfirm={handleConfirmDelete} productName={productToDelete?.name || ''} />
     </>
   );
-}
+} 

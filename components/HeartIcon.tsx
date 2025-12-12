@@ -22,7 +22,7 @@ export default function HeartIcon({ isFavorite, onClick }: HeartIconProps) {
       `}
       aria-label={isFavorite ? "Favorilerden kaldır" : "Favorilere ekle"}
     >
-      
+       
       <svg 
         className={`
           w-5 h-5 

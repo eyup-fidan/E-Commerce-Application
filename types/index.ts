@@ -12,7 +12,7 @@ export interface Product {
   reviewCount?: number;
 }
 
-
+ 
 export interface CartItem {
   productId: string;      // Hangi ürün? (ID'si)
   quantity: number;       // Kaç adet?

@@ -103,7 +103,7 @@ export default function CartPage() {
             ))}
             </div>
 
-              
+               
             <div className="lg:col-span-1">
                 <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 sticky top-24">
                     <h2 className="text-lg font-bold text-gray-800 mb-4">Sipariş Özeti</h2>

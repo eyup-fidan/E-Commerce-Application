@@ -16,7 +16,7 @@ export default function ProfileModal({ isOpen, onClose, onUpdateSuccess }: Profi
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [successMsg, setSuccessMsg] = useState('');
-
+ 
   // Modal açıldığında mevcut bilgileri doldur
   useEffect(() => {
     if (isOpen) {

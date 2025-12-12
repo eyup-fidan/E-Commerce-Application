@@ -305,7 +305,7 @@ export default function HelpWidget() {
         </div>
 
       </div>
-
+ 
       {/* LAUNCHER */}
       <button 
         onClick={() => setIsOpen(!isOpen)}

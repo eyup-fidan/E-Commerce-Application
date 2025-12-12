@@ -52,7 +52,7 @@ export default function Tooltip({ children, text }: TooltipProps) {
         >
           {text}
         </div>
-        
+         
         {/* OK - Üçgen kısmı */}
         <div 
           className="absolute left-1/2 -translate-x-1/2 -bottom-1 w-2 h-2 bg-gray-900 rotate-45"

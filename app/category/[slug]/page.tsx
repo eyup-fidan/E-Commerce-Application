@@ -36,7 +36,7 @@ export default function CategoryPage() {
     const storedFavorites = localStorage.getItem('favorites');
     if (storedFavorites) setFavorites(new Set(JSON.parse(storedFavorites)));
   }, [category]);
-
+ 
   useEffect(() => {
     const filtered = allProducts.filter(product =>
       product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||

@@ -11,4 +11,4 @@ export default function Notification({ message, show }: NotificationProps) {
       <p>{message}</p>
     </div>
   );
-}
+} 

@@ -18,4 +18,4 @@ export default function FavoriteToast({ message, show }: ToastProps) {
       </div>
     </div>
   );
-}
+} 

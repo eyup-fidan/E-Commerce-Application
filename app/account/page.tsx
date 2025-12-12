@@ -62,7 +62,7 @@ export default function AccountPage() {
   const handleCheckboxChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData(prev => ({ ...prev, isCorporate: e.target.checked }));
   };
-
+ 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 

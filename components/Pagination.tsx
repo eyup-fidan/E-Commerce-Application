@@ -94,7 +94,7 @@ export default function Pagination({ totalItems, itemsPerPage, currentPage }: Pa
             <ChevronLeftIcon />
           </Link>
         </li>
-        
+         
         {/* SAYFA NUMARALARI */}
         {pages.map((page, index) => {
           if (page === '...') {

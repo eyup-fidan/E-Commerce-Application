@@ -416,7 +416,7 @@ export default function CheckoutPage() {
             </div>
         </div>
       )}
-
+ 
       
       {infoPanel === 'success' && (
         <div className="fixed inset-0 z-[100] bg-white flex items-center justify-center p-4 animate-fade-in-down">

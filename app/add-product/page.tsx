@@ -152,7 +152,7 @@ export default function AddProductPage() {
         } else if (!priceRegex.test(product.price)) {
             newErrors.price = 'Geçerli format: 1.000,50 veya 100,00';
         }
-
+ 
         if (product.discountedPrice && !priceRegex.test(product.discountedPrice)) {
             newErrors.discountedPrice = 'Geçerli format: 850,00';
         }

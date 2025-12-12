@@ -39,7 +39,7 @@ export default function CartItemCard({
           className="w-24 h-24 sm:w-32 sm:h-32 object-contain border rounded-md"
         />
       </Link>
-      
+       
       
       <div className="flex-grow grid grid-cols-1 sm:grid-cols-4 gap-4 sm:items-start">
         

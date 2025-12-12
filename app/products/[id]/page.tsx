@@ -77,7 +77,7 @@ export default function ProductDetailPage() {
         showNotification(`Stokta yalnızca ${product.stock} adet kaldı!`);
         return;
     }
-    
+     
     // Eklenecek 'CartItem' nesnesini oluştur
     const newItem: CartItem = {
       productId: product.id,

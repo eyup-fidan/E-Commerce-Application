@@ -18,7 +18,7 @@ export default function ImageZoom({ src, alt, zoomScale = 2.5 }: ImageZoomProps)
   const [lensPosition, setLensPosition] = useState({ x: 0, y: 0 }); // Lensin pozisyonu için yeni state
 
   const imgRef = useRef<HTMLImageElement>(null);
-
+ 
   const handleMouseMove = (e: React.MouseEvent<HTMLImageElement>) => {
     if (!imgRef.current) return;
 

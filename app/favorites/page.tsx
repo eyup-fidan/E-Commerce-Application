@@ -11,7 +11,7 @@ import Pagination from '@/components/Pagination';
 import CategoryNav from '@/components/CategoryNav';
 
 const ITEMS_PER_PAGE = 20;
-
+ 
 export default function FavoritesPage() {
   const searchParams = useSearchParams();
   const searchTerm = searchParams.get('search') || '';
