@@ -188,7 +188,7 @@ export default function AddProductPage() {
 
         return newErrors;
     };
- 
+  
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault(); 
         const validationErrors = validateForm();
