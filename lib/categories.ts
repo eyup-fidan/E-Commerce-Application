@@ -10,5 +10,5 @@ export const CATEGORIES = [
   { name: "Gıda",         slug: "gida" },
   { name: "Oyuncak",      slug: "oyuncak" },
 ] as const;
- 
+  
 export const VALID_CATEGORY_NAMES = CATEGORIES.map(c => c.name);

@@ -51,7 +51,7 @@ const dispatchCartEvent = () => {
     window.dispatchEvent(new Event('cartUpdated'));
   }
 };
- 
+  
 export const getCartItems = (): CartItem[] => {
   if (typeof window === 'undefined') return [];
   const cartJson = localStorage.getItem(CART_KEY);

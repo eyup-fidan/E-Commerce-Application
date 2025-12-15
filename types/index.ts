@@ -11,7 +11,7 @@ export interface Product {
   rating?: number;
   reviewCount?: number;
 }
-
+ 
  
 export interface CartItem {
   productId: string;      // Hangi ürün? (ID'si)
