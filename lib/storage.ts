@@ -23,7 +23,7 @@ export const deleteProductFromStorage = (productId: string): Product[] => {
     let products = getProductsFromStorage();
     products = products.filter(p => p.id !== productId);
     saveProductsToStorage(products);
-    return products;
+    return products; 
 }
 export const updateProductInStorage = (updatedProduct: Product): void => {
     let products = getProductsFromStorage();
