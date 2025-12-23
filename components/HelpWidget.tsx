@@ -16,7 +16,7 @@ const AgentAvatar = () => (
     </svg>
   </div>
 );
-
+ 
 // TİPLER 
 type MessageType = 'text' | 'options' | 'order-form' | 'contact-form' | 'return-info';
 type Sender = 'bot' | 'user';

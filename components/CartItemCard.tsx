@@ -4,7 +4,7 @@ import { formatPriceWithoutSymbol } from '@/lib/format';
 import MinusIcon from './MinusIcon';
 import PlusIcon from './PlusIcon';
 import TrashIcon from './TrashIcon';
-
+ 
 interface CartItemCardProps {
   product: Product;
   cartItem: CartItem;

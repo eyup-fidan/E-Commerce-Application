@@ -6,7 +6,7 @@ interface ImageZoomProps {
   src: string;
   alt: string;
   zoomScale?: number;
-}
+} 
 
 // Lensin boyutu sabit 
 const LENS_WIDTH = 200; // Lensin genişliği

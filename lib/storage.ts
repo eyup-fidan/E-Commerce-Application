@@ -57,7 +57,7 @@ export const getCartItems = (): CartItem[] => {
   const cartJson = localStorage.getItem(CART_KEY);
   return cartJson ? JSON.parse(cartJson) : [];
 };
-
+ 
 export const saveCartItems = (items: CartItem[]): void => {
   if (typeof window !== 'undefined') {
     localStorage.setItem(CART_KEY, JSON.stringify(items));

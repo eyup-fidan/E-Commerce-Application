@@ -13,7 +13,7 @@ function WarningIcon() {
     </svg>
   );
 }
- 
+  
 export default function DeleteToast({ isOpen, onClose, onConfirm, productName }: ToastProps) {
   if (!isOpen) return null;
 

@@ -6,7 +6,7 @@ import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 import HamburgerIcon from './HamburgerIcon';
 import CloseIcon from './CloseIcon';
 import HeaderHeartIcon from './HeaderHeartIcon';
-import ShoppingCartIcon from './ShoppingCartIcon';
+import ShoppingCartIcon from './ShoppingCartIcon'; 
 import PlusIconHeader from './PlusIconHeader';
 import AuthModal from './AuthModal'; 
 import { getCartItems } from '@/lib/storage'; 

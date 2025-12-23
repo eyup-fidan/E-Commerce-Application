@@ -232,7 +232,7 @@ export default function AddProductPage() {
                 </h1>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                    
+                     
                     <div>
                         <div className="flex justify-between items-center mb-1">
                             <label className="block text-sm font-medium text-gray-700">Ürün Adı *</label>

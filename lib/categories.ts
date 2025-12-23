@@ -8,7 +8,7 @@ export const CATEGORIES = [
   { name: "Mobilya",      slug: "mobilya" },
   { name: "Kırtasiye",    slug: "kirtasiye" },
   { name: "Gıda",         slug: "gida" },
-  { name: "Oyuncak",      slug: "oyuncak" },
+  { name: "Oyuncak",      slug: "oyuncak" }, 
 ] as const;
   
 export const VALID_CATEGORY_NAMES = CATEGORIES.map(c => c.name);

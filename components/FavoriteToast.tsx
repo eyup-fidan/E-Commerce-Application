@@ -17,5 +17,5 @@ export default function FavoriteToast({ message, show }: ToastProps) {
         <p className="text-sm font-medium">{message}</p>
       </div>
     </div>
-  );
+  );  
 } 

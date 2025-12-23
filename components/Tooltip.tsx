@@ -40,7 +40,7 @@ export default function Tooltip({ children, text }: TooltipProps) {
           absolute bottom-full left-1/2 -translate-x-1/2 mb-3
           transition-all duration-300 ease-in-out
           ${isVisible 
-            ? 'opacity-100 translate-y-0' 
+            ? 'opacity-100 translate-y-0'  
             
             : 'opacity-0 translate-y-2 pointer-events-none' 
           }

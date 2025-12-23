@@ -12,7 +12,7 @@ const YEARS = Array.from({ length: 100 }, (_, i) => new Date().getFullYear() - i
 export default function AccountPage() {
   const router = useRouter();
   const [notification, setNotification] = useState({ show: false, message: '' });
-
+ 
   const [formData, setFormData] = useState({
     name: '',
     surname: '',

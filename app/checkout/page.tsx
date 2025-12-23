@@ -397,7 +397,7 @@ export default function CheckoutPage() {
 
       </div>
 
-      
+       
       {infoPanel && infoPanel !== 'success' && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/50 backdrop-blur-sm animate-fade-in">
             <div className="relative bg-white w-full max-w-2xl rounded-2xl shadow-2xl flex flex-col max-h-[80vh]">

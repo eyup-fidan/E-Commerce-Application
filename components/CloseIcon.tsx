@@ -1,6 +1,6 @@
 export default function CloseIcon() {
   return (
-    <svg
+    <svg 
       className="w-6 h-6"
       fill="none"
       stroke="currentColor"

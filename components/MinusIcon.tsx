@@ -6,7 +6,7 @@ export default function MinusIcon() {
       viewBox="0 0 24 24" 
       stroke="currentColor" 
       strokeWidth={3}
-    >
+    > 
       <path strokeLinecap="round" strokeLinejoin="round" d="M20 12H4" />
     </svg>
   );

@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   title: 'Ürün Yönetim Sistemi',
   description: 'Next.js ile ürün yönetim projesi',
 };
-
+ 
 export const viewport: Viewport = {
   width: 'device-width', initialScale: 1,
   maximumScale: 1, userScalable: false,

@@ -9,7 +9,7 @@ import DeleteToast from '@/components/DeleteToast';
 import FavoriteToast from '@/components/FavoriteToast';
 import Pagination from '@/components/Pagination';
 import CategoryNav from '@/components/CategoryNav';
-
+ 
 const ITEMS_PER_PAGE = 20;
  
 export default function FavoritesPage() {

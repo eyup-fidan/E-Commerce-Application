@@ -28,7 +28,7 @@ export default function CategoryPage() {
   const [toast, setToast] = useState({ show: false, message: '' });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [productToDelete, setProductToDelete] = useState<Product | null>(null);
-
+ 
   useEffect(() => {
     const productsFromStorage = getProductsFromStorage();
     const categoryProducts = category ? productsFromStorage.filter(p => p.category === category.name) : [];

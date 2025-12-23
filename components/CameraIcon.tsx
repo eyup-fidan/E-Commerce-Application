@@ -3,7 +3,7 @@ import React from 'react';
 
 export default function CameraIcon() {
   return (
-     
+      
     <svg 
       xmlns="http://www.w3.org/2000/svg" 
       className="h-4 w-4 text-gray-500" // Boyut ve rengi ayarla

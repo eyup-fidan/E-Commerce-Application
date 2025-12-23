@@ -2,7 +2,7 @@ interface NotificationProps {
   message: string;
   show: boolean;
 }
-
+ 
 export default function Notification({ message, show }: NotificationProps) {
   if (!show) return null;
 

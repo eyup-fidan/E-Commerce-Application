@@ -10,7 +10,7 @@ import { formatPriceWithoutSymbol } from '@/lib/format';
 interface MergedCartItem {
   cartInfo: CartItem;
   productInfo: Product;
-}
+} 
 
 export default function CartPage() {
   const [mergedCart, setMergedCart] = useState<MergedCartItem[]>([]);

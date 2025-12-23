@@ -13,7 +13,7 @@ import ChevronRightIcon from '@/components/ChevronRightIcon';
 import { formatPriceWithoutSymbol } from '@/lib/format';
 import ImageZoom from '@/components/ImageZoom';
 import PlayIcon from '@/components/PlayIcon';
-
+ 
 const shoeSizes = ["36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46"];
 const clothingSizes = ["XS","S", "M", "L", "XL", "XXL"]; 
 

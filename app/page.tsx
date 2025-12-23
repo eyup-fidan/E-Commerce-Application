@@ -70,7 +70,7 @@ export default function HomePage() {
       <h1 className="text-2xl font-bold mb-6 text-gray-900 border-b-4 border-blue-600 pb-2 inline-block">
         Tüm Ürünler ({filteredProducts.length})
       </h1>
-      
+       
       {currentPageProducts.length > 0 ? (
         <>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 auto-rows-fr">

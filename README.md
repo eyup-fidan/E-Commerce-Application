@@ -49,7 +49,7 @@ This project simulates a real-world shopping experience without a backend, utili
 | ![My Cart](./public/MyCart.jpg) | ![Payment Page](./public/PaymentPage.jpg) |
 
 | User Information |
-|------------------|
+|------------------| 
 | ![User Information](./public/UserInformation.jpg) |
 
 ## Getting Started

@@ -6,7 +6,7 @@ interface HeartIconProps {
 export default function HeartIcon({ isFavorite, onClick }: HeartIconProps) {
   return (
     
-    
+     
     <div
       onClick={onClick}
       className={`

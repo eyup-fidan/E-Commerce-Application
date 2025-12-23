@@ -11,7 +11,7 @@ interface ProductCardProps {
   isFavorite: boolean; 
   onToggleFavorite: (e: React.MouseEvent) => void;
 }
-
+ 
 // YILDIZ BİLEŞENİ
 const Star = ({ percentage, idPrefix }: { percentage: number; idPrefix: string }) => {
   const gradientId = `grad-${idPrefix}`;
