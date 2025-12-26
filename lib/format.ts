@@ -4,7 +4,7 @@
  * @returns {string} - Formatlanmış sayı string'i 
  */
 export const formatPriceWithoutSymbol = (value: number): string => {
-    
+     
     const formatted = new Intl.NumberFormat('tr-TR', {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,

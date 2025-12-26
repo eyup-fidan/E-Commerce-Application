@@ -2,7 +2,7 @@ import { Product, CartItem } from '@/types';
 
 const PRODUCTS_KEY = 'products';
 const CART_KEY = 'cart';
-
+ 
 // ÜRÜN FONKSİYONLARI 
 export const getProductsFromStorage = (): Product[] => {
   if (typeof window === 'undefined') return [];

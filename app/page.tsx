@@ -24,7 +24,7 @@ export default function HomePage() {
   const [toast, setToast] = useState({ show: false, message: '' });
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [productToDelete, setProductToDelete] = useState<Product | null>(null);
-
+ 
   useEffect(() => {
     const productsFromStorage = getProductsFromStorage();
     setAllProducts(productsFromStorage);
